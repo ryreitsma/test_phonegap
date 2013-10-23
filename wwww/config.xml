@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- config.xml reference: https://build.phonegap.com/docs/config-xml -->
+<widget xmlns     = "http://www.w3.org/ns/widgets"
+        xmlns:gap = "http://phonegap.com/ns/1.0"
+        id        = "nl.booklisting_test.mobile"
+        version   = "0.0.1">
+
+  <name>Books li</name>
+
+  <description>
+    Testing phonegap app with jQuery mobile and Apigee backend
+  </description>
+
+  <author href="http://ryreitsma.blogspot.com" email="roelof.reitsma@gmail.com">
+    Roelof Reitsma
+  </author>
+
+  <icon src="assets/images/coconut_logo_80px.png" />
+  <gap:platform name="android" />
+
+</widget>
