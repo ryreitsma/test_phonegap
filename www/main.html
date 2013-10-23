@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Coconut Mobile - Meld je aan voor de Mobile App - Coconut</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="js/jquery-2.0.3.min.js"></script>
+    <script src="js/jquery.mobile-1.3.2.min.js"></script>
+    <script src="js/apigee.js"></script>
+
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/jquery.mobile-1.3.2.min.css">
+    <link rel="stylesheet" href="css/jquery.mobile.structure-1.3.2.min.css">
+    <link rel="stylesheet" href="css/jquery.mobile.theme-1.3.2.min.css">
+  </head>
+  <body>
+    <div data-role="page">
+      <div data-role="header" data-theme="b">
+        <h2>My books</h2>
+        <a href="/books/add.html" data-role="button" data-inline="true" data-icon="plus" data-iconpos="right" class="ui-btn-right">Add</a>
+      </div>
+      <div data-role="content">
+        <ul data-role="listview" id="books-list">
+
+        </ul>
+      </div>
+    </div>
+    <script>
+      // Initializing the SDK
+      var client = new Apigee.Client({
+        orgName:'ryreitsma',
+        appName:'sandbox'
+      });
+      // Reading data
+      var books = new Apigee.Collection({ "client":client, "type":"books" });
+      books.fetch(
+          function() {
+            var booksList = $("#books-list");
+            while(books.hasNextEntity()) {
+              var book = books.getNextEntity();
+              var listElement = $("<li>");
+              listElement.append($("<h3>").text(book.get("title")));
+              listElement.append($("<p>").text(book.get("author")));
+              booksList.append(listElement);
+            }
+            booksList.listview("refresh");
+
+          },
+          function () { alert("fetching books failed"); }
+      );
+
+    </script>
+
+  </body>
+</html>
