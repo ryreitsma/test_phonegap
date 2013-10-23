@@ -38,7 +38,7 @@
             var booksList = $("#books-list");
             while(books.hasNextEntity()) {
               var book = books.getNextEntity();
-              var listElement = $("<li>");
+              var listElement = $("<li>").append($("<img>", {"src":"img/coconut_logo_80px.png"}));
               listElement.append($("<h3>").text(book.get("title")));
               listElement.append($("<p>").text(book.get("author")));
               booksList.append(listElement);
