@@ -6,7 +6,7 @@
         id        = "nl.booklisting_test.mobile"
         version   = "0.0.1">
 
-  <name>Coconut</name>
+  <name>Coconut MOBILE test</name>
 
   <description>
     Testing phonegap app with jQuery mobile and Apigee backend
@@ -16,7 +16,7 @@
     Roelof Reitsma
   </author>
 
-  <icon src="assets/images/coconut_logo_80px.png" />
+  <icon src="images/coconut_logo_80px.png" />
   <gap:platform name="android" />
   <access origin="*" />
 </widget>
