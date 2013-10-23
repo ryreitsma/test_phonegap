@@ -16,7 +16,7 @@
     Roelof Reitsma
   </author>
 
-  <icon src="images/coconut_logo_80px.png" />
+  <icon src="img/coconut_logo_80px.png" />
   <gap:platform name="android" />
   <access origin="*" />
 </widget>
